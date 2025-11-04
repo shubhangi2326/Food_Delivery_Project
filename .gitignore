@@ -1,0 +1,19 @@
+# Ignore all node_modules folders
+**/node_modules
+
+# Ignore all .env files
+**/.env
+**/.env.*
+!**/.env.example
+
+# Ignore build folders from frontend and admin
+/frontend/dist
+/frontend/build
+/admin/dist
+/admin/build
+
+# Ignore common files
+.DS_Store
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
