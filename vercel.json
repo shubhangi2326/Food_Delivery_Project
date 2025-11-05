@@ -22,15 +22,14 @@
       "dest": "backend/server.js"
     },
     {
-      "src": "/admin/(.*)",
-      "dest": "/admin/index.html"
-    },
-    {
-      "src": "/(.*)",
       "handle": "filesystem"
     },
     {
-      "src": "/(.*)",
+      "src": "/admin/.*",
+      "dest": "/admin/index.html"
+    },
+    {
+      "src": "/.*",
       "dest": "/index.html"
     }
   ]
