@@ -1,35 +1,77 @@
-import 'dotenv/config' 
+// import 'dotenv/config' 
+// import express from 'express';
+// import cors from 'cors';
+// import { connectDB } from './config/db.js';
+// import foodRouter from './routes/foodRoute.js';
+// import userRouter from './routes/userRoute.js';
+// import cartRouter from './routes/cartRouter.js';
+// import orderRouter from './routes/orderRoute.js';
+
+// //app config
+// const app = express();
+
+
+// //middleware
+// app.use(express.json());
+// app.use(cors());
+
+// //DB Connection
+// connectDB();
+
+// //api endpoints
+// app.use("/api/food", foodRouter);
+// app.use("/images", express.static('uploads'));
+// app.use("/api/user", userRouter);
+// app.use("/api/cart", cartRouter);
+// app.use("/api/order", orderRouter);
+
+// app.get('/', (req, res) => {
+//     res.send("API is Working...");
+// });
+
+
+
+// export default app;
+
+import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
 import { connectDB } from './config/db.js';
 import foodRouter from './routes/foodRoute.js';
 import userRouter from './routes/userRoute.js';
 import cartRouter from './routes/cartRouter.js';
-import orderRouter from './routes/orderRoute.js';
+import orderRouter from './routes/orderRouter.js';
+import { v2 as cloudinary } from 'cloudinary';
 
-//app config
+// App config
 const app = express();
-// const port = 4000; // Vercel apne aap port manage karega, iski zaroorat nahi
+const port = process.env.PORT || 4000;
 
-//middleware
+// Middleware
 app.use(express.json());
 app.use(cors());
 
-//DB Connection
+// DB Connection
 connectDB();
 
-//api endpoints
+
+
+// API endpoints
 app.use("/api/food", foodRouter);
-// DHYAAN DE: Yeh line Vercel par kaam nahi karegi. Aapko Cloudinary jaisi service use karni hogi.
-app.use("/images", express.static('uploads'));
 app.use("/api/user", userRouter);
 app.use("/api/cart", cartRouter);
 app.use("/api/order", orderRouter);
 
-app.get('/', (req, res) => {
-    res.send("API is Working...");
+// YEH LINE HATA DI GAYI HAI: app.use("/images", express.static('uploads'));
+
+// Health check route
+app.get("/api", (req, res) => {
+    res.json({ message: "API is Working..." });
 });
 
+app.listen(port, () => {
+    console.log(`Server started on http://localhost:${port}`);
+});
 
-
+// Vercel deployment ke liye
 export default app;
