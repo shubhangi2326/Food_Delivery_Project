@@ -23,14 +23,15 @@
     },
     {
       "src": "/admin/(.*)",
-      "dest": "/admin/index.html" 
+      "dest": "/admin/index.html"
     },
     {
+      "src": "/(.*)",
       "handle": "filesystem"
     },
     {
       "src": "/(.*)",
-      "dest": "/index.html" 
+      "dest": "/index.html"
     }
   ]
 }
