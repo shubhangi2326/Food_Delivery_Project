@@ -1,139 +1,200 @@
-.navbar{
-      padding :20px 0px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-}
-.navbar .logo{
-      width: 150px;
-      
-}
-.navbar-menu{
-      display: flex;
-      list-style: none;
-      gap: 20px;
-      font-size: 18px;
-      color: #49557e;
-    
-}
-.navbar-right{
-      display: flex;
-      align-items: center;
-      gap: 40px;
-}
-.navbar button{
-      background: transparent;
-      padding : 5px;
-      font-size: 16px;
-       border: 1px solid tomato;
-       color: #49557e;
-       border-radius: 50px;
-       padding: 10px 30px;
-       cursor: pointer;
-       transition: 0.3s;
-}
-.navbar button:hover{
-      background-color: #fff4f2;
-}
-.navbar .active{
-      padding-bottom: 2px;
-      border-bottom: 1px solid #49557e;
-}
-.navbar li{
-      cursor: pointer;
+.navbar {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.navbar-search-icon{
-      position: relative;
-}
-.navbar-search-icon .dot{
-      position: absolute;
-      min-width: 10px;
-      min-height: 10px;
-      background-color: tomato;
-      border-radius: 5px;
-      top: -8px;
-      right: -8px;
-
+.navbar .logo {
+    width: 150px;
+    cursor: pointer;
 }
 
-.navbar-Profile{
-      position: relative;
-}
-.nav-profile-dropdown{
-      position: absolute;
-      display: none;
-      right: 0;
-      z-index: 1;
-}
-.navbar-Profile:hover .nav-profile-dropdown{
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      background-color: #fff2ef;
-      padding: 12px 25px;
-      border-radius: 4px;
-      border: 1px solid tomato;
-      outline: 2px solid white;
-      list-style: none;
+.navbarMenu {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    font-size: 18px;
+    color: #49557e;
+    align-items: center;
 }
 
-.nav-profile-dropdown li{
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      cursor: pointer;
-}
-.nav-profile-dropdown img{
-      width :20px;
-}
-.nav-profile-dropdown li:hover{
-      color: tomato;
-}
-@media (max-width:1050px) {
-      .navbar .logo{
-            width:140px
-      }
-      .navbar-menu{
-            gap: 20px;
-            font-size: 17px;
-      }
-      .navbar-right{
-            gap: 30px;
-      }
-      .navbar-right img{
-            width: 22px;
-      }
-      .navbar-right button{
-            padding: 8px 25px;
-      }
+.navbarMenu li, .navbarMenu a {
+    cursor: pointer;
+    text-decoration: none;
+    color: #49557e;
+    transition: 0.2s;
 }
 
-@media (max-width:900px) {
-      .navbar .logo{
-            width:120px
-      }
-      .navbar-menu{
-            gap: 15px;
-            font-size: 16px;
-      }
-      .navbar-right{
-            gap: 20px;
-      }
-      .navbar-right img{
-            width: 20px;
-      }
-      .navbar-right button{
-            padding: 7px 20px;
-            font-size: 15px;
-      }
+.navbarMenu li:hover, .navbarMenu a:hover {
+    color: tomato;
 }
 
-@media (max-width:750px) {
-      
-     
-      .navbar-menu{
-            display: none;
-      }
-     
+.navbar .active {
+    padding-bottom: 2px;
+    border-bottom: 2px solid tomato;
+}
+
+.navbarRight {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.navbarRight img {
+    cursor: pointer;
+}
+
+.navbar button {
+    background: transparent;
+    font-size: 16px;
+    color: #49557e;
+    border: 1px solid tomato;
+    padding: 10px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.navbar button:hover {
+    background-color: #fff4f2;
+}
+
+.navbarSearchIcon {
+    position: relative;
+}
+
+.navbarSearchIcon .dot {
+    position: absolute;
+    min-width: 10px;
+    min-height: 10px;
+    background-color: tomato;
+    border-radius: 5px;
+    top: -8px;
+    right: -8px;
+}
+
+.navbarProfile {
+    position: relative;
+}
+
+.navProfileDropdown {
+    position: absolute;
+    display: none;
+    right: 0;
+    z-index: 1;
+}
+
+.navbarProfile:hover .navProfileDropdown {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #fff2ef;
+    padding: 12px 25px;
+    border-radius: 4px;
+    border: 1px solid tomato;
+    outline: 2px solid white;
+    list-style: none;
+}
+
+.navProfileDropdown li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.navProfileDropdown img {
+    width: 20px;
+}
+
+.navProfileDropdown li:hover {
+    color: tomato;
+}
+
+/* Hamburger Menu Icon - Initially hidden on desktop */
+.menuIcon, .closeIcon {
+    display: none;
+    cursor: pointer;
+}
+.closeIcon img {
+    width: 20px;
+}
+
+/* ------ Media Queries for Responsiveness ------ */
+
+@media (max-width: 1050px) {
+    .navbar .logo {
+        width: 140px;
+    }
+    .navbarMenu {
+        gap: 20px;
+        font-size: 17px;
+    }
+    .navbarRight {
+        gap: 30px;
+    }
+    .navbarRight img {
+        width: 22px;
+    }
+    .navbarRight button {
+        padding: 8px 25px;
+    }
+}
+
+@media (max-width: 900px) {
+    .navbar .logo {
+        width: 120px;
+    }
+    .navbarMenu {
+        gap: 15px;
+        font-size: 16px;
+    }
+    .navbarRight {
+        gap: 20px;
+    }
+    .navbarRight img {
+        width: 20px;
+    }
+    .navbarRight button {
+        padding: 7px 20px;
+        font-size: 15px;
+    }
+}
+
+/* Mobile View - Hamburger Menu Logic */
+@media (max-width: 750px) {
+    /* Show menu icon */
+    .menuIcon {
+        display: block;
+        width: 24px;
+    }
+
+    /* Hide desktop menu and show as sidebar */
+    .navbarMenu {
+        position: fixed;
+        top: 0;
+        right: -300px; 
+        width: 250px;
+        height: 100vh;
+        background-color: #fff2ef;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 40px 30px;
+        gap: 25px;
+        z-index: 10;
+        transition: right 0.4s ease-in-out;
+        border-left: 2px solid tomato;
+    }
+    .navbarMenu .closeIcon {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    /* Class to slide the menu in */
+    .navbarMenu.activeSidebar {
+        right: 0;
+    }
 }
