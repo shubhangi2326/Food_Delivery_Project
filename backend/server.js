@@ -62,7 +62,7 @@ app.use("/api/user", userRouter);
 app.use("/api/cart", cartRouter);
 app.use("/api/order", orderRouter);
 
-// YEH LINE HATA DI GAYI HAI: app.use("/images", express.static('uploads'));
+
 
 // Health check route
 app.get("/api", (req, res) => {
@@ -73,5 +73,5 @@ app.listen(port, () => {
     console.log(`Server started on http://localhost:${port}`);
 });
 
-// Vercel deployment ke liye
+
 export default app;
