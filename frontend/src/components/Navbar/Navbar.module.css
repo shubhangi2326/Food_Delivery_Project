@@ -2,7 +2,7 @@
 .navbar {
     padding: 20px 0;
     display: flex;
-    justify-content: space-between; /* This is the key for the layout */
+    justify-content: space-between; 
     align-items: center;
 }
 
@@ -14,12 +14,12 @@
 .navbarMenu {
     display: flex;
     list-style: none;
-    gap: 25px; /* Spacing between menu items */
+    gap: 25px; 
     color: #49557e;
     font-size: 18px;
 }
 
-.navbarMenu a { /* Using 'a' tag selector for links */
+.navbarMenu a { 
     text-decoration: none;
     color: #49557e;
     cursor: pointer;
@@ -43,7 +43,7 @@
 }
 
 .navbarRight img {
-    width: 24px; /* Slightly bigger icons */
+    width: 24px;
     cursor: pointer;
 }
 
