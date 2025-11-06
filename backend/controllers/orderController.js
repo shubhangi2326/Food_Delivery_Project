@@ -6,11 +6,11 @@ import Stripe from 'stripe'
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
 //placing user order for frontend
 export const placeOrder = async(req,res)=>{
-      const frontend_url = "http://localhost:5173"
+      const frontend_url = "https://food-delivery-project-frontend-3ayw.onrender.com"
    try{
        const newOrder = new orderModel({
             userId:req.userId,
-            items:req.body.items, // ✅ CORRECTED: 'item' se 'items' kar diya gaya hai
+            items:req.body.items, 
             amount:req.body.amount,
             address:req.body.address
        })
