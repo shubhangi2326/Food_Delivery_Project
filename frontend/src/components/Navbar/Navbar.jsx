@@ -1,4 +1,4 @@
-import React, 'react';
+import React from 'react'; 
 import { assets } from '../../assets/assets';
 import styles from './Navbar.module.css'; 
 import { Link, useNavigate } from 'react-router-dom';
