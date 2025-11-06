@@ -1,40 +1,41 @@
+/* Base styles for the navbar */
 .navbar {
     padding: 20px 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* This is the key for the layout */
     align-items: center;
 }
 
 .navbar .logo {
     width: 150px;
-    cursor: pointer;
 }
 
+/* Menu links styling */
 .navbarMenu {
     display: flex;
     list-style: none;
-    gap: 25px;
-    font-size: 18px;
+    gap: 25px; /* Spacing between menu items */
     color: #49557e;
-    align-items: center;
+    font-size: 18px;
 }
 
-.navbarMenu li, .navbarMenu a {
-    cursor: pointer;
+.navbarMenu a { /* Using 'a' tag selector for links */
     text-decoration: none;
     color: #49557e;
+    cursor: pointer;
     transition: 0.2s;
 }
 
-.navbarMenu li:hover, .navbarMenu a:hover {
+.navbarMenu a:hover {
     color: tomato;
 }
 
-.navbar .active {
+.navbarMenu .active {
     padding-bottom: 2px;
-    border-bottom: 2px solid tomato;
+    border-bottom: 2px solid #49557e;
 }
 
+/* Right side elements styling */
 .navbarRight {
     display: flex;
     align-items: center;
@@ -42,6 +43,7 @@
 }
 
 .navbarRight img {
+    width: 24px; /* Slightly bigger icons */
     cursor: pointer;
 }
 
@@ -60,6 +62,7 @@
     background-color: #fff4f2;
 }
 
+/* Cart icon with dot */
 .navbarSearchIcon {
     position: relative;
 }
@@ -74,6 +77,7 @@
     right: -8px;
 }
 
+/* Profile dropdown styling */
 .navbarProfile {
     position: relative;
 }
@@ -83,6 +87,7 @@
     display: none;
     right: 0;
     z-index: 1;
+    list-style: none;
 }
 
 .navbarProfile:hover .navProfileDropdown {
@@ -94,7 +99,6 @@
     border-radius: 4px;
     border: 1px solid tomato;
     outline: 2px solid white;
-    list-style: none;
 }
 
 .navProfileDropdown li {
@@ -112,16 +116,7 @@
     color: tomato;
 }
 
-/* Hamburger Menu Icon - Initially hidden on desktop */
-.menuIcon, .closeIcon {
-    display: none;
-    cursor: pointer;
-}
-.closeIcon img {
-    width: 20px;
-}
-
-/* ------ Media Queries for Responsiveness ------ */
+/* --- Media Queries for smaller screens --- */
 
 @media (max-width: 1050px) {
     .navbar .logo {
@@ -162,39 +157,8 @@
     }
 }
 
-/* Mobile View - Hamburger Menu Logic */
 @media (max-width: 750px) {
-    /* Show menu icon */
-    .menuIcon {
-        display: block;
-        width: 24px;
-    }
-
-    /* Hide desktop menu and show as sidebar */
     .navbarMenu {
-        position: fixed;
-        top: 0;
-        right: -300px; 
-        width: 250px;
-        height: 100vh;
-        background-color: #fff2ef;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 40px 30px;
-        gap: 25px;
-        z-index: 10;
-        transition: right 0.4s ease-in-out;
-        border-left: 2px solid tomato;
-    }
-    .navbarMenu .closeIcon {
-        display: block;
-        position: absolute;
-        top: 20px;
-        right: 20px;
-    }
-
-    /* Class to slide the menu in */
-    .navbarMenu.activeSidebar {
-        right: 0;
+        display: none; /* Hides the menu on small screens */
     }
 }
