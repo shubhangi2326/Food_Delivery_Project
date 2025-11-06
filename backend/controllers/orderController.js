@@ -10,7 +10,7 @@ export const placeOrder = async(req,res)=>{
    try{
        const newOrder = new orderModel({
             userId:req.userId,
-            items:req.body.items, // ✅ CORRECTED: 'item' se 'items' kar diya gaya hai
+            items:req.body.items, 
             amount:req.body.amount,
             address:req.body.address
        })
