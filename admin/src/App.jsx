@@ -8,7 +8,7 @@ import {Routes,Route} from 'react-router-dom'
   import { ToastContainer} from 'react-toastify';
 
 const App = () => {
-   const url="http://localhost:4000"
+   const url=" const url = import.meta.env.VITE_BACKEND_URL"
   return (
     <div>
       <ToastContainer/>
